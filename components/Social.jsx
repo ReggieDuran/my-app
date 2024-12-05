@@ -1,14 +1,19 @@
+"use client";
+
 import Link from "next/link";
-import { FaGithub, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const socials = [
   {
     icon: <FaGithub />,
-    path: "",
+    path: "https://github.com/ReggieDuran",
   },
-  { icon: <FaLinkedin />, path: "" },
-  { icon: <FaYoutube />, path: "" },
-  { icon: <FaTwitter />, path: "" },
+  {
+    icon: <FaLinkedin />,
+    path: "https://www.linkedin.com/in/reggie-duran-20bb80156/",
+  },
+  //   { icon: <FaYoutube />, path: "" },
+  //   { icon: <FaTwitter />, path: "" },
 ];
 
 const Social = ({ containerStyles, iconStyles }) => {
@@ -19,6 +24,7 @@ const Social = ({ containerStyles, iconStyles }) => {
           {item.icon}
         </Link>
       ))}
+      {/* <GetGithubContributions username="ReggieDuran" /> */}
     </div>
   );
 };

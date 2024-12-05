@@ -21,11 +21,16 @@ module.exports = {
 		fontFamily: {
 			primary: 'var(--font-jetbrainsMono)'
 		},
+		// 14213d
+		// 000
+		// fff
+		// e5e5e5
+		// fca311
 		extend: {
 			colors: {
 				primary: '#1c1c22',
 				accent: {
-					DEFAULT: '#00ff99',
+					DEFAULT: '#f97316',
 					hover: '#00e187'
 				}
 			},
