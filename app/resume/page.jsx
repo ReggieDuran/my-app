@@ -48,48 +48,94 @@ const about = {
 };
 
 const experiences = {
-  title: "My experience",
-  description: "Lorem ipsum dolor sit amet...",
+  title: "Professional Experience",
   items: [
     {
       company: "Gambit Technologies, Inc",
       position: "Web Developer",
+      responsibilities:
+        "Created and developed WordPress plugins and themes. Built websites from scratch through custom theme/blank theme. Maintained company products and directly worked with QA and Lead/Founder of the company.",
       duration: "2015 - 2018",
+      stack: ["WordPress", "HTML", "CSS", "JavaScript", "PHP", "Custom Theme"],
     },
     {
       company: "Sonnet Digital",
       position: "Frontend Developer",
+      responsibilities:
+        "Developed WordPress websites from scratch using customized themes and plugins. Debugged and maintained existing websites. Coordinated directly with the project managers and QA testers.",
       duration: "2018 - 2019",
-    },
-    {
-      company: "TLLCM",
-      position: "Frontend Developer",
-      duration: "2019",
+      stack: ["WordPress", "HTML", "CSS", "JavaScript", "PHP", "Custom Theme"],
     },
     {
       company: "Digispark Tech",
       position: "Frontend Developer",
+      responsibilities:
+        "Assigned to develop and build mobiles applications, re-usable templates and components.",
       duration: "2019 - 2020",
+      stack: [
+        "Vue JS",
+        "Basic Angular",
+        "Basic Ionic",
+        "HTML",
+        "SCSS",
+        "CSS",
+        "JavaScript",
+      ],
     },
     {
       company: "Sonnet Digital - Contractor",
       position: "Frontend Developer",
+      responsibilities:
+        "As a contracter I was assigned to develop WordPress websites from scratch using customized themes and plugins. Debugged and maintained existing websites. Coordinated directly with the project managers and QA testers.",
       duration: "2020 - 2021",
+      stack: ["WordPress", "HTML", "CSS", "JavaScript", "PHP", "Custom Theme"],
     },
     {
-      company: "Information Professionals Inc - Contractor",
+      company: "Information Professionals Inc",
       position: "Programmer - JavaScript Analyst",
+      responsibilities:
+        "Performed compliance with software development lifecycle standards of the company. Coordinated with vendor or conducts own investigation and resolution of errors reported during SIT and UAT. Maintained the systems once they're up and running in PROD, and performed fixes or application enhancements as needed. Conducted unit testing on written codes to ensure program perform per design at the unit level.",
       duration: "2021-2024",
+      stack: [
+        "React JS",
+        "Node JS",
+        "MongoDB",
+        "Redux/Redux Saga",
+        "HTML",
+        "CSS",
+        "JavaScript",
+      ],
     },
     {
       company: "Code Switch - Contractor",
       position: "Frontend Developer",
+      responsibilities:
+        "Collaborated with co-devs and team leads. Assigned to write modern, performant, and maintainable code for the project. Created unit and integration tests to ensure project's quality.",
       duration: "2023 - 2024",
+      stack: [
+        "React JS",
+        "TypeScript",
+        "Mantine UI",
+        "HTML",
+        "CSS",
+        "JavaScript",
+      ],
     },
     {
       company: "Accenture",
       position: "App/Cloud Support Specialist",
+      responsibilities:
+        "Assigned to perform ServiceNow services. Currently certified as system administrator(CSA) and ongoing to certify in Software Asset Management(SAM) module for ITAM path.",
       duration: "2024 - Present",
+      stack: [
+        "ServiceNow",
+        "CSA",
+        "MC - Welcome to ServiceNow",
+        "MC - Performance Analytics",
+        "HTML",
+        "CSS",
+        "JavaScript",
+      ],
     },
   ],
 };
@@ -197,27 +243,37 @@ const Resume = () => {
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{experiences.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-9">
-                  {experiences.description}
-                </p>
-                <ScrollArea className="h-[400px]">
-                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                <ScrollArea className="h-[450px]">
+                  <ul className="grid grid-cols-1 gap-[30px]">
                     {experiences.items.map((experience, index) => (
                       <li
                         key={index}
-                        className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                        className="bg-[#232329] lg:h-[450px] h-auto py-6 px-10 rounded-xl flex flex-col justify-evenly lg:items-start gap-1 text-left"
                       >
-                        <span className="text-accent">
-                          {experience.duration}
-                        </span>
-                        <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
-                          {experience.position}
-                        </h3>
-                        <div className="flex items-center gap-3">
-                          {/* dot */}
-                          <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                          <p className="text-white/60">{experience.company}</p>
+                        <div className="flex flex-row justify-between items-start w-full mb-3">
+                          <div>
+                            <h3 className="text-xl ">{experience.position}</h3>
+                            <p className="text-white/60">
+                              {experience.company}
+                            </p>
+                          </div>
+                          <span className="text-accent">
+                            {experience.duration}
+                          </span>
                         </div>
+                        <div>{experience.responsibilities}</div>
+                        {experience.stack && (
+                          <ul className="flex gap-3 mt-3 flex-wrap">
+                            {experience.stack.map((item, index) => (
+                              <li
+                                key={index}
+                                className="bg-white rounded-md text-primary px-3"
+                              >
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
                       </li>
                     ))}
                   </ul>
