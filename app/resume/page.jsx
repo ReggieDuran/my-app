@@ -10,7 +10,8 @@ import {
 
 const about = {
   title: "About me",
-  description: "Lorem ipsum dolor sit amet...",
+  description:
+    "I am a full-time Software Engineer based in the Philippines since 2015, with extensive experience in developing websites and web applications. I am passionate about exploring and learning new programming skills.",
   info: [
     {
       fieldName: "Name",
@@ -142,24 +143,19 @@ const experiences = {
 
 const education = {
   title: "My education",
-  description: "Lorem ipsum dolor sit amet...",
   items: [
     {
-      institution: "Saint Joseph College of Bulacan",
-      degree: "Secondary - HS Graduate",
-      duration: "2007 - 2011",
-    },
-    {
       institution: "Polytechnic University of the Philippines",
-      degree: "Tertiary - BSIT Gradutate",
+      degree: "Bachelor of Science in Information Technology",
       duration: "2011 - 2015",
+      description:
+        "Graduated with a strong GPA. Served as the lead developer for our thesis project, a Bookkeeping System, which received high marks. Primarily used Visual Basic for development.",
     },
   ],
 };
 
 const skills = {
   title: "My skills",
-  description: "Lorem Ipsum dolor sit amet...",
   skillList: [
     {
       icon: <FaHtml5 />,
@@ -243,7 +239,7 @@ const Resume = () => {
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{experiences.title}</h3>
-                <ScrollArea className="h-[450px]">
+                <ScrollArea className="h-[600px]">
                   <ul className="grid grid-cols-1 gap-[30px]">
                     {experiences.items.map((experience, index) => (
                       <li
@@ -284,25 +280,24 @@ const Resume = () => {
             <TabsContent value="education" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{education.title}</h3>
-                <p className="max-w-[600px] text-white/60 mx-auto xl:mx-9">
-                  {education.description}
-                </p>
+
                 <ScrollArea className="h-[400px]">
-                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                  <ul className="grid grid-cols-1 gap-[30px]">
                     {education.items.map((item, index) => (
                       <li
                         key={index}
-                        className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                        className="bg-[#232329] lg:h-[350px] h-auto py-6 px-10 rounded-xl flex flex-col justify-evenly lg:items-start gap-1 text-left"
                       >
-                        <span className="text-accent">{item.duration}</span>
-                        <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
-                          {item.degree}
-                        </h3>
-                        <div className="flex items-center gap-3">
-                          {/* dot */}
-                          <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                          <p className="text-white/60">{item.institution}</p>
+                        <div className="flex flex-row justify-between items-start w-full mb-3">
+                          <div>
+                            <h3 className="text-xl lg:max-w-[300px] max-w-auto">
+                              {item.degree}
+                            </h3>
+                            <p className="text-white/60">{item.institution}</p>
+                          </div>
+                          <span className="text-accent">{item.duration}</span>
                         </div>
+                        <div>{item.description}</div>
                       </li>
                     ))}
                   </ul>
